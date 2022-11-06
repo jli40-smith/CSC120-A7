@@ -57,10 +57,10 @@ public class Building {
 
     /* Navigation methods */
     public Building enter() {
-        if (activeFloor != -1) {
-        this.activeFloor = 1;
-        System.out.println("You are now inside " + this.name + " on the ground floor.");
-        return this; // Return a pointer to the current building
+        if (activeFloor == -1) {
+            this.activeFloor = 1;
+            System.out.println("You are now inside " + this.name + " on the ground floor.");
+            return this; // Return a pointer to the current building
         } else { 
             throw new RuntimeException("You are already inside this Building"); 
         }
@@ -118,8 +118,9 @@ public class Building {
         System.out.println("Demonstrating enter/exit/navigation");
         System.out.println("-----------------------------------");
         fordHall.enter();
+        fordHall.goToFloor(2);
         fordHall.goUp();
-        fordHall.goDown();
+        fordHall.goToFloor(1);
         //fordHall.goToFloor(4);
         fordHall.exit();
     }
