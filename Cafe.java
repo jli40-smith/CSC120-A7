@@ -96,12 +96,19 @@ public class Cafe extends Building {
         System.out.println(" + sellCoffee(n,n,n)\n + restock(n,n,n,n)\n");
     }
     
+    public void goToFloor(int floorNum) {
+        if (floorNum == 1) { 
+        super.goToFloor(floorNum);
+        } 
+        throw new RuntimeException("You can only access the first floor of Cafes");
+    }
+
     /**
      * Main method for testing Cafe methods
      * @param args String array with command-line arguments
      */
     public static void main(String[] args) {
-        Cafe compassCafe = new Cafe("Compass Cafe", "Neilson Drive", 1, 51, 0, 0, 1);
+        Cafe compassCafe = new Cafe("Compass Cafe", "Neilson Drive", 2, 51, 0, 0, 1);
         
         compassCafe.showOptions();
 
@@ -119,6 +126,9 @@ public class Cafe extends Building {
         System.out.println("Sugar packets " +compassCafe.nSugarPackets);
         System.out.println("Creams " +compassCafe.nCreams);
 
+        compassCafe.enter(); 
+        compassCafe.goToFloor(1);
+        compassCafe.goToFloor(2);
     }
     
 }
