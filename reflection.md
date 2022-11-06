@@ -4,10 +4,10 @@ Which methods did you decide to overload, and why?
 **House**
 * I overloaded the constructor in House.java so that default houses with no elevator and no dining room could be 
     created without needing to pass in any information.
-* I overloaded the moveIn() method so that it takes an integer, and the method adds "Student 1, Student 2, ... , Student n" to the House. This would be useful for adding a specific number of unnamed students to a House to reserve spots.
+* I overloaded the moveIn() method so that it takes an integer n and adds "Student 1, Student 2, ... , and Student n" to the House. This would be useful for adding a specific number of anonymized students to a House or for reserving spots in a House with placeholder students. 
 
 **Library**
-* 
+*
 **Cafe**
 * 
 
