@@ -4,7 +4,6 @@ import java.util.Set;
 /**
  * A Building which tracks a collection of book titles and author 
  * infomation along with each book's availability status
- * 
  * @author Joanna Li 
  * @version 11/02/2022
  */
@@ -15,7 +14,6 @@ public class Library extends Building {
 
     /**
      * Constructs a Library
-     * 
      * @param name String name of the library
      * @param address String street address of the library 
      * @param nFloors int number of floors in the Library 
@@ -39,7 +37,6 @@ public class Library extends Building {
 
     /** 
      * Removes a book from the library
-     * 
      * @param title String with the title and author of the book to be removed
      * @return String with the title and author of the book that was removed
      */
@@ -68,8 +65,7 @@ public class Library extends Building {
     }
 
     /** 
-     * Checks if a book is in the collection  
-     * 
+     * Checks if a book is in the collection
      * @param title String with title and author of the book to check for
      * @return boolean indicating if the book is in the collection 
      */
@@ -79,7 +75,6 @@ public class Library extends Building {
 
     /** 
      * Checks if a book's availability status is true
-     * 
      * @param title String with title and author of the book to check for availability 
      * @return boolean indicating if the book is available 
      */
@@ -110,13 +105,18 @@ public class Library extends Building {
     }
     
     /**
-     * Prints list of available methods for the House
+     * Prints list of available methods
      */
   public void showOptions() {
     super.showOptions();
     System.out.println(" + addTitle(\"\")\n + removeTitle(\"\") \n + checkOut(\"\")\n + returnBook(\"\")\n + containsTitle(\"\")\n + isAvailable(\"\")\n + printCollection()\n"  );
 }
 
+  /**
+   * Allows movement to nonadjacent floors
+   * @param floorNum int number of the floor to move to, should be in valid range of floors for the Library
+   * @throws RuntimeException if the Library does not have an elevator
+   */
   public void goToFloor(int floorNum) {
      if (!hasElevator) { 
      throw new RuntimeException("This building doesn't have an elevator, use goUp() or goDown() to move one floor at a time"); 

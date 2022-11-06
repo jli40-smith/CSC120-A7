@@ -89,13 +89,18 @@ public class Cafe extends Building {
     }
 
     /**
-     * Prints list of available methods for the Cafe 
+     * Prints list of available methods
      */
     public void showOptions() {
         super.showOptions();
         System.out.println(" + sellCoffee(n,n,n)\n + restock(n,n,n,n)\n");
     }
-    
+
+  /**
+   * Allows movement to the first floor 
+   * @param floorNum int number of the floor to move to, should be equal to 1
+   * @throws RuntimeException if floorNum is not equal to 1
+   */
     public void goToFloor(int floorNum) {
         if (floorNum == 1) { 
         super.goToFloor(floorNum);
