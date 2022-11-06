@@ -9,7 +9,8 @@ import java.util.ArrayList;
  */
 public class House extends Building {
 
-  private  boolean hasDining;
+  private  boolean hasDiningRoom;
+  private boolean hasElevator; 
   private ArrayList<String> residents;
 
   /**
@@ -19,11 +20,12 @@ public class House extends Building {
    * @param nFloors int number of floors in the house 
    * @param hasDiningRoom boolean indicating if the house has a dining room 
    */
-  public House(String name, String address, int nFloors, boolean hasDiningRoom) {
+  public House(String name, String address, int nFloors, boolean hasDiningRoom, boolean hasElevator) {
     
     super(name, address, nFloors);
     residents = new ArrayList<String>();
-    this.hasDining = hasDiningRoom;
+    this.hasDiningRoom = hasDiningRoom;
+    this.hasElevator = hasElevator;
 
     System.out.println("You have built a house");
   }
@@ -33,7 +35,7 @@ public class House extends Building {
    * @return boolean indicating if the house has a dining room 
    */
   public boolean hasDiningRoom() {
-    return hasDining; 
+    return hasDiningRoom; 
   }
 
   /** 
@@ -70,6 +72,24 @@ public class House extends Building {
     return residents.contains(person); 
   }
 
+  public void goToFloor(int floorNum) {
+    int activeFloor = this.getActiveFloor();
+
+    /*Allows or disallows the use of goToFloor depending on the value of hasElevator*/
+    if (!hasElevator) { 
+      throw new RuntimeException("This building doesn't have an elevator, use goUp() or goDown() to move one floor at a time"); 
+    }
+      if (activeFloor == -1) {
+          throw new RuntimeException("You are not inside this Building. Must call enter() before navigating between floors.");
+      } else {
+      if (floorNum < 1 || floorNum > this.nFloors) {
+          throw new RuntimeException("Invalid floor number. Valid range for this Building is 1-" + this.nFloors +".");
+      }
+      System.out.println("You are now on floor #" + floorNum + " of " + this.name);
+      setActiveFloor(floorNum);
+    }
+  }
+
   /**
    * Prints list of available methods for the House 
    */
@@ -83,7 +103,7 @@ public class House extends Building {
      */
   public static void main(String[] args) {
 
-    House lamontHouse = new House("Lamont", "Prospect Street", 3, true);
+    House lamontHouse = new House("Lamont", "Prospect Street", 4, true, true);
 
     System.out.println(lamontHouse);
     lamontHouse.showOptions();
@@ -98,6 +118,12 @@ public class House extends Building {
     System.out.println(lamontHouse.moveOut("Jared"));
     System.out.println(lamontHouse.isResident("Jared"));
 
+    lamontHouse.enter(); 
+    lamontHouse.goToFloor(3);
+
+    House albrightHouse = new House("Albright", "Street", 4, true, false);
+    albrightHouse.enter(); 
+    albrightHouse.goToFloor(3);
   }
 
 }

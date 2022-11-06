@@ -11,6 +11,7 @@ import java.util.Set;
 public class Library extends Building {
 
     private Hashtable<String, Boolean> collection;
+    private boolean hasElevator; 
 
     /**
      * Constructs a Library
@@ -19,9 +20,10 @@ public class Library extends Building {
      * @param address String street address of the library 
      * @param nFloors int number of floors in the Library 
      */
-    public Library(String name, String address, int nFloors) {
+    public Library(String name, String address, int nFloors, boolean hasElevator) {
       super(name, address, nFloors);
       collection = new Hashtable<String, Boolean>();
+      this.hasElevator = hasElevator;
 
       System.out.println("You have built a library");
     }
@@ -121,7 +123,7 @@ public class Library extends Building {
      */
     public static void main(String[] args) {
 
-      Library neilsonLibrary = new Library("Neilson Library", "Neilson Drive", 4);
+      Library neilsonLibrary = new Library("Neilson Library", "Neilson Drive", 4, true);
       neilsonLibrary.showOptions();
 
       //Add a book and verify that it worked
