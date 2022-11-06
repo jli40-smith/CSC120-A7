@@ -74,7 +74,7 @@ public class House extends Building {
 
   public void goToFloor(int floorNum) {
 
-    /*Allows or disallows the use of goToFloor depending on the value of hasElevator*/
+    /*Allows movement between nonadjacent floors if elevator is present*/
     if (!hasElevator) { 
       throw new RuntimeException("This building doesn't have an elevator, use goUp() or goDown() to move one floor at a time"); 
     }

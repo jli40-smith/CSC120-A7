@@ -11,7 +11,7 @@ import java.util.Set;
 public class Library extends Building {
 
     private Hashtable<String, Boolean> collection;
-    private boolean hasElevator; 
+    private boolean hasElevator = true; 
 
     /**
      * Constructs a Library
@@ -20,10 +20,9 @@ public class Library extends Building {
      * @param address String street address of the library 
      * @param nFloors int number of floors in the Library 
      */
-    public Library(String name, String address, int nFloors, boolean hasElevator) {
+    public Library(String name, String address, int nFloors) {
       super(name, address, nFloors);
       collection = new Hashtable<String, Boolean>();
-      this.hasElevator = hasElevator;
 
       System.out.println("You have built a library");
     }
@@ -119,12 +118,10 @@ public class Library extends Building {
 }
 
   public void goToFloor(int floorNum) {
-
-    /*Allows or disallows the use of goToFloor depending on the value of hasElevator*/
-    if (!hasElevator) { 
-      throw new RuntimeException("This building doesn't have an elevator, use goUp() or goDown() to move one floor at a time"); 
-    }
-      super.goToFloor(floorNum);
+     if (!hasElevator) { 
+     throw new RuntimeException("This building doesn't have an elevator, use goUp() or goDown() to move one floor at a time"); 
+    }  
+    super.goToFloor(floorNum);
   }
 
     /**
@@ -133,7 +130,7 @@ public class Library extends Building {
      */
     public static void main(String[] args) {
 
-      Library neilsonLibrary = new Library("Neilson Library", "Neilson Drive", 4, true);
+      Library neilsonLibrary = new Library("Neilson Library", "Neilson Drive", 4);
       neilsonLibrary.showOptions();
 
       //Add a book and verify that it worked
@@ -160,6 +157,13 @@ public class Library extends Building {
 
       //Print the collection
       neilsonLibrary.printCollection();
+      
+      /*Testing movement between floors */
+      neilsonLibrary.enter(); 
+      neilsonLibrary.goToFloor(4);
+      neilsonLibrary.goDown();
+      neilsonLibrary.goToFloor(1);
+      neilsonLibrary.exit(); 
     }
   
   }
