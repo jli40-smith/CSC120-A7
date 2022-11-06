@@ -24,7 +24,7 @@ Listed below are various aspects of the assignment.  When you turn in your work,
 
 ### Level 2: Method `Overloads` (3 pts)
 
-_____ 1 pt: The `House` class includes at least 2 overloaded methods
+**YES** 1 pt: The `House` class includes at least 2 overloaded methods
 
 _____ 1 pt: The `Library` class includes at least 2 overloaded methods
 
@@ -40,9 +40,9 @@ _____ 1 pt: The `CampusMap` includes at least one instance of each class: a `Hou
 
 ## General Items:
 
-_____ 4 pts: Programs compile without errors or warnings
+**YES** 4 pts: Programs compile without errors or warnings
 
-_____ 2 pts: Executes fully & consistently without crashing (exception/freeze)
+**YES** 2 pts: Executes fully & consistently without crashing (exception/freeze)
 
 _____ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
@@ -50,11 +50,11 @@ _____ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
       _____ Clear and consistent indentation of bracketed sections
 
-      _____ Adheres to Java conventions on naming & capitalization
+      **YES** Adheres to Java conventions on naming & capitalization
 
-      _____ Methods & variables all have clear and accurate names
+      **YES** Methods & variables all have clear and accurate names
 
-      _____ Methods avoid confusing side effects
+      **YES** Methods avoid confusing side effects
 
 _____ 1 pt: All required files included with submission (including completed `rubric.md` file)
 

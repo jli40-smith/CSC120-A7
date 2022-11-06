@@ -12,8 +12,19 @@ public class House extends Building {
   private boolean hasElevator; 
   private ArrayList<String> residents;
 
+  /** 
+   * Default constructor for House
+   */
+  public House() {
+    super();
+    this.nFloors = 4;
+    residents = new ArrayList<String>();
+    this.hasDiningRoom = false; 
+    this.hasElevator = false;
+  }
+
   /**
-   * Constructs a House 
+   * Overloaded constructors which takes all the attributes for a House 
    * @param name String name of the house 
    * @param address String street address of the house 
    * @param nFloors int number of floors in the house 
@@ -44,8 +55,18 @@ public class House extends Building {
   public int nResidents() { 
     return residents.size(); 
   }
+  
   /** 
-   * Adds a resident to the house 
+   *Adds n placeholder students to the House
+   */
+  public void moveIn(int n) {
+    for (int i=1; i<=n; i++ ) {
+      residents.add("Student " + i);
+    }
+  }
+  
+  /** 
+   * Adds a named resident to the house 
    * @param name String name of the resident moving in 
    */
   public void moveIn(String name) { 
@@ -98,7 +119,8 @@ public class House extends Building {
   public static void main(String[] args) {
 
     House lamontHouse = new House("Lamont", "Prospect Street", 4, true, true);
-
+    
+    //Test House methods 
     System.out.println(lamontHouse);
     lamontHouse.showOptions();
     System.out.println(lamontHouse.hasDiningRoom());
@@ -112,12 +134,23 @@ public class House extends Building {
     System.out.println(lamontHouse.moveOut("Jared"));
     System.out.println(lamontHouse.isResident("Jared"));
 
-    lamontHouse.enter(); 
+    lamontHouse.enter();
     lamontHouse.goToFloor(3);
 
+    
+    //Test Default constructor
+    House defaultHouse = new House(); 
+    System.out.println(defaultHouse);
+    defaultHouse.moveIn(30);
+
+    System.out.println(defaultHouse.nResidents()); 
+    System.out.println(defaultHouse.isResident("Student 1"));
+    System.out.println(defaultHouse.isResident("Student 30")); 
+
+    //Test
     House albrightHouse = new House("Albright", "Street", 4, true, false);
     albrightHouse.enter(); 
-    albrightHouse.goToFloor(3);
+    //albrightHouse.goToFloor(3); //It is verified that this will cause a RuntimeException
   }
 
 }
