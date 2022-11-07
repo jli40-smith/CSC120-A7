@@ -33,16 +33,25 @@ public class Cafe extends Building {
 
         System.out.println("You have built a cafe");
     }
-
     /**
-     * Sells a cup of coffee and subtracts the given amounts of cups
-     * or ingredients used from the inventory counts
-     * and restocks inventory items that run out 
-     * 
+     * Sells a default order of coffee and restocks the inventory items sold
+     */
+    public void sellCoffee() { 
+        this.nCoffeeOunces -= 2;
+        this.nSugarPackets -= 1;
+        this.nCreams -= 2;
+        this.nCups -= 1; 
+
+        restock(2, 1, 2, 1);
+    }
+    
+    /**
+     * Sells a cup of coffee and restocks inventory items that run out 
      * @param nCoffeeOunces int ounces of coffee sold
      * @param nSugarPackets int number of sugar packets sold 
      * @param nCreams int number of creams sold 
      */
+
     public void sellCoffee(int nCoffeeOunces, int nSugarPackets, int nCreams) {
 
         this.nCoffeeOunces -= nCoffeeOunces;
@@ -102,10 +111,11 @@ public class Cafe extends Building {
    * @throws RuntimeException if floorNum is not equal to 1
    */
     public void goToFloor(int floorNum) {
-        if (floorNum == 1) { 
+        if (floorNum == 1) {
         super.goToFloor(floorNum);
-        } 
-        throw new RuntimeException("You can only access the first floor of Cafes");
+        } else { 
+            throw new RuntimeException("You can only access the first floor of Cafes");
+        }    
     }
 
     /**
@@ -133,7 +143,17 @@ public class Cafe extends Building {
 
         compassCafe.enter(); 
         compassCafe.goToFloor(1);
-        compassCafe.goToFloor(2);
+        //compassCafe.goToFloor(2); //This causes a RuntimeException because you can only access the first floor of Cafes
+
+        /* /*Testing the default order of coffee*/
+        for (int i=0; i<10; i++) {
+            compassCafe.sellCoffee(); //The inventory numbers stay the same, showing that the default order is being  restocked each time it is sold
+            System.out.println("Cups: " + compassCafe.nCups);
+            System.out.println("Coffee: " +compassCafe.nCoffeeOunces);
+            System.out.println("Sugar packets " +compassCafe.nSugarPackets);
+            System.out.println("Creams " +compassCafe.nCreams);
+        }
+        */
     }
     
 }
