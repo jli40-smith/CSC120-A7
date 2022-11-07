@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * A Building which tracks the residents 
  * living in a Smith house
  * @author Joanna Li 
- * @version 11/02/2022
+ * @version 11/07/2022
  */
 public class House extends Building {
 
@@ -57,7 +57,7 @@ public class House extends Building {
   }
   
   /** 
-   *Adds n placeholder students to the House
+   *Adds n placeholder students named Student 1, Student 2, ..., Student n to the House
    */
   public void moveIn(int n) {
     for (int i=1; i<=n; i++ ) {
@@ -65,12 +65,12 @@ public class House extends Building {
     }
   }
   
-  /** 
-   * Adds a named resident to the house 
-   * @param name String name of the resident moving in 
+  /**
+   * Adds a named resident to the house
+   * @param name String name of the resident moving in
    */
-  public void moveIn(String name) { 
-    residents.add(name); 
+  public void moveIn(String name) {
+    residents.add(name);
   }
   
   /** 
@@ -92,7 +92,7 @@ public class House extends Building {
   }
   
   /**
-   * Prints list of available methods for the House 
+   * Prints list of available methods for the House
    */
   public void showOptions() {
     super.showOptions(); 
@@ -100,7 +100,7 @@ public class House extends Building {
 }
 
   /**
-   * Allows movement to nonadjacent floors 
+   * Allows movement to nonadjacent floors
    * @param floorNum int number of the floor to move to, should be in valid range of floors for the House
    * @throws RuntimeException if the House does not have an elevator 
    */
