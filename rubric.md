@@ -26,9 +26,9 @@ Listed below are various aspects of the assignment.  When you turn in your work,
 
 **YES** 1 pt: The `House` class includes at least 2 overloaded methods
 
-_____ 1 pt: The `Library` class includes at least 2 overloaded methods
+**YES** 1 pt: The `Library` class includes at least 2 overloaded methods
 
-_____ 1 pt: The `Cafe` class includes at least 2 overloaded methods
+**YES** 1 pt: The `Cafe` class includes at least 2 overloaded methods
 
 ### Level 3: `CampusMap.java` (2 pts)
 
@@ -56,6 +56,6 @@ _____ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
       **YES** Methods avoid confusing side effects
 
-_____ 1 pt: All required files included with submission (including completed `rubric.md` file)
+**YES** 1 pt: All required files included with submission (including completed `rubric.md` file)
 
 _____ 1 pt: `reflection.md` contains your reflection on the assignment
