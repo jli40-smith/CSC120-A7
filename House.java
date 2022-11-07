@@ -137,11 +137,12 @@ public class House extends Building {
       lamontHouse.goToFloor(3);
 
       
-      //Test Default constructor
+      //Testing Default constructor
       House defaultHouse = new House(); 
       System.out.println(defaultHouse);
       defaultHouse.moveIn(30);
 
+      /*Testing the addition of placeholder students*/
       System.out.println(defaultHouse.nResidents()); 
       System.out.println(defaultHouse.isResident("Student 1"));
       System.out.println(defaultHouse.isResident("Student 30")); 

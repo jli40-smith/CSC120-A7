@@ -165,6 +165,7 @@ public class Cafe extends Building {
             System.out.println("Creams " +compassCafe.nCreams);
         }
         */
+        
         /*Testing the default constructor */
         Cafe defaultCafe = new Cafe(); 
         System.out.println("Cups: " + defaultCafe.nCups);
