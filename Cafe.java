@@ -1,9 +1,8 @@
 /**
  * A Building which keeps count of an inventory of coffee 
  * components which can be sold and restocked
- * 
- * @author Joanna Li 
- * @version 11/02/2022
+ * @author Joanna Li
+ * @version 11/07/2022
  */
 public class Cafe extends Building {
     
@@ -13,7 +12,7 @@ public class Cafe extends Building {
     private int nCups;
 
     /**
-     * Constructs a default Cafe with an empty inventory 
+     * Constructs a default Cafe with an empty inventory
      */
     public Cafe() {
         super();
@@ -46,6 +45,7 @@ public class Cafe extends Building {
 
         System.out.println("You have built a cafe");
     }
+
     /**
      * Sells a default order of coffee and restocks the inventory items sold
      */
@@ -64,9 +64,7 @@ public class Cafe extends Building {
      * @param nSugarPackets int number of sugar packets sold 
      * @param nCreams int number of creams sold 
      */
-
     public void sellCoffee(int nCoffeeOunces, int nSugarPackets, int nCreams) {
-
         this.nCoffeeOunces -= nCoffeeOunces;
         this.nSugarPackets -= nSugarPackets;
         this.nCreams -= nCreams;
