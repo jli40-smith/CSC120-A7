@@ -24,7 +24,7 @@ public class House extends Building {
   }
 
   /**
-   * Overloaded constructors which takes all the attributes for a House 
+   * Constructor which takes all the attributes for a House 
    * @param name String name of the house 
    * @param address String street address of the house 
    * @param nFloors int number of floors in the house 

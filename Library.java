@@ -10,8 +10,16 @@ import java.util.Set;
 public class Library extends Building {
 
     private Hashtable<String, Boolean> collection;
-    private boolean hasElevator = true; 
+    private boolean hasElevator = true;
 
+     /**
+      * Default constructor for Library
+      */
+    public Library(int nFloors) {
+      super();
+      collection = new Hashtable<String, Boolean>();
+      this.nFloors = nFloors;
+  }
     /**
      * Constructs a Library
      * @param name String name of the library
@@ -164,6 +172,11 @@ public class Library extends Building {
       neilsonLibrary.goDown();
       neilsonLibrary.goToFloor(1);
       neilsonLibrary.exit(); 
+
+      /*Test default constructor */
+      Library defaultLibrary = new Library(3);
+      defaultLibrary.enter(); 
+      defaultLibrary.goToFloor(3);
     }
   
   }
