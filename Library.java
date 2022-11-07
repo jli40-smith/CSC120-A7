@@ -128,9 +128,9 @@ public class Library extends Building {
           System.out.print("\"" + title + "\",");
           
           if (!collection.get(title)) {
-            System.out.println("Checked out");
+            System.out.println("0");
           } else {
-            System.out.println("Available");
+            System.out.println("1");
           }
         } 
       } else {

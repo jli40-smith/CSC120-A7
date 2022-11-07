@@ -7,7 +7,9 @@ Which methods did you decide to overload, and why?
 * I overloaded the moveIn() method so that it takes an integer n and adds "Student 1, Student 2, ... , and Student n" to the House. This would be useful for adding a specific number of anonymized students to a House or for reserving spots in a House with placeholder students. 
 
 **Library**
-*
+* I overloaded the Library constructor so that a default library can be created with an int which indicates the number of floors the Library should have. I chose to make that parameter required since the number of floors present in Libraries are generally more variable than the number of floors in other types of Buildings.
+* I overloaded the printCollection() method so that if a string equal to "csv" is entered as a parameter, the collection will be printed in .csv format. This would be helpful for displaying the collection in a less readable, but more compact way, or for exporting the titles and availability information of library items to an Excel file
+
 **Cafe**
 * 
 
