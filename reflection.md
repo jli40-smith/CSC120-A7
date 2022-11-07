@@ -18,5 +18,6 @@ What worked, what didn't, what advice would you give someone taking this course 
 **COLLABORATION**
 I did not collaborate with anyone else on this assignment 
 
- **REFERENCES**
- No references were used 
+ **REFERENCES** in-line citations look like: //Source [n]
+[1] Found code for iterating through a Hashtable. 
+https://www.geeksforgeeks.org/how-to-iterate-through-hashtable-in-java/

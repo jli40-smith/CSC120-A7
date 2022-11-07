@@ -111,6 +111,33 @@ public class Library extends Building {
       System.out.println("*******************************");
       }
     }
+
+    /** 
+     * Prints out the books in the library with their availability status in csv format
+     * @param csv String that 
+     */
+    public void printCollection(String csv) {
+      csv = csv.toLowerCase();
+
+      if (csv.equals("csv")) {
+        Set<String> allTitles = collection.keySet(); //Source [1]
+
+        System.out.println("Title and Author,Availability");
+
+        for (String title : allTitles) {
+          System.out.print("\"" + title + "\",");
+          
+          if (!collection.get(title)) {
+            System.out.println("Checked out");
+          } else {
+            System.out.println("Available");
+          }
+        } 
+      } else {
+        System.out.println("To display the collection in csv format, enter \"csv\" as the parameter for printCollection()");
+      }
+
+    }
     
     /**
      * Prints list of available methods
@@ -165,6 +192,10 @@ public class Library extends Building {
 
       //Print the collection
       neilsonLibrary.printCollection();
+
+      //Print collection in csv format
+      neilsonLibrary.printCollection("csv");
+      neilsonLibrary.printCollection("CSV");
       
       /*Testing movement between floors */
       neilsonLibrary.enter(); 
