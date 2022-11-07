@@ -114,7 +114,7 @@ public class Library extends Building {
 
     /** 
      * Prints out the books in the library with their availability status in csv format
-     * @param csv String that 
+     * @param csv String which should be equal to "csv" (non case-sensitive) for the collection to be displayed in .csv format
      */
     public void printCollection(String csv) {
       csv = csv.toLowerCase();

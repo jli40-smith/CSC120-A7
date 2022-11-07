@@ -13,8 +13,21 @@ public class Cafe extends Building {
     private int nCups;
 
     /**
+     * Constructs a default Cafe with an empty inventory 
+     */
+    public Cafe() {
+        super();
+
+        this.nCoffeeOunces = 0;
+        this.nSugarPackets = 0;
+        this.nCreams = 0;
+        this.nCups = 0;
+
+        System.out.println("You have built a cafe");
+    }
+    
+    /**
      * Constructs a Cafe
-     * 
      * @param name String name of the cafe 
      * @param address String street address of the cafe 
      * @param nFloors int equal to the number of floors in the cafe 
@@ -36,7 +49,7 @@ public class Cafe extends Building {
     /**
      * Sells a default order of coffee and restocks the inventory items sold
      */
-    public void sellCoffee() { 
+    public void sellCoffee() {
         this.nCoffeeOunces -= 2;
         this.nSugarPackets -= 1;
         this.nCreams -= 2;
@@ -145,7 +158,7 @@ public class Cafe extends Building {
         compassCafe.goToFloor(1);
         //compassCafe.goToFloor(2); //This causes a RuntimeException because you can only access the first floor of Cafes
 
-        /* /*Testing the default order of coffee*/
+        /* Testing the default order of coffee
         for (int i=0; i<10; i++) {
             compassCafe.sellCoffee(); //The inventory numbers stay the same, showing that the default order is being  restocked each time it is sold
             System.out.println("Cups: " + compassCafe.nCups);
@@ -154,6 +167,12 @@ public class Cafe extends Building {
             System.out.println("Creams " +compassCafe.nCreams);
         }
         */
+        /*Testing the default constructor */
+        Cafe defaultCafe = new Cafe(); 
+        System.out.println("Cups: " + defaultCafe.nCups);
+        System.out.println("Coffee: " + defaultCafe.nCoffeeOunces);
+        System.out.println("Sugar packets " + defaultCafe.nSugarPackets);
+        System.out.println("Creams " + defaultCafe.nCreams);
     }
     
 }
